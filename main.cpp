@@ -1,5 +1,6 @@
 #include <iostream>
-#include "test.cpp"
+#include "Node.h"
+#include "Trie.h"
 
 using namespace std;
 
@@ -25,26 +26,29 @@ int main()
 //    Test *test = new Test;
 //    test->testNode();
 
+
+
+// ПЕРЕПИСАТЬ CLASS NODE!!!!!! VECTOR <PAIR <*NODE, BOOL>> -> VECTOR<*NODE>  - BOOL БОЛЬШЕ МЕШАЕТ, ЧЕМ САХАРА СЫПЕТ
     Trie *trie = new Trie;
 
     trie->addWord("car");
     trie->addWord("carrot");
+    trie->addWord("carrots");
 
-    Node* f1 = new Node;
-    cout << f1->isEmpty() << endl;
+    auto car = trie->findWord("car");
+    auto carrot = trie->findWord("carrot");
+    auto carrots = trie->findWord("carrots");
+    auto carr = trie->findWord("carr");
 
-    f1 = trie->findWord("car");
-    cout << f1->isEmpty() << endl;
+
+    car->printNode();
+    carrot->printNode();
+    carrots->printNode();
 
 
-    Node* f2 = trie->findWord("carrot");
-
-    cout << f2->isEmpty() << endl;
-    Node* f3 = trie->findWord("carr");
-
-    cout << trie->deleteWord("car");
-    //cout << endl << f1 << endl << f2 << endl << f3 << endl;
+    trie->deleteWord("");
 
 
     return 0;
+
 }

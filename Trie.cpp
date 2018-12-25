@@ -37,7 +37,7 @@ void Trie::addWord(string wrd)
     {
         vector <unsigned> word = this->stringToNum(wrd);
         Node* root = this->getRoot();
-        for(unsigned letter: word)
+         for(unsigned letter: word)
         {
             if(root->getChild(letter))
             {
@@ -81,6 +81,7 @@ vector <unsigned> Trie::stringToNum(string word)
     return res;
 }
 
+
 string Trie::numToString(vector <unsigned> nums)
 {
     string res = "";
@@ -91,6 +92,7 @@ string Trie::numToString(vector <unsigned> nums)
     }
     return res;
 }
+
 
 Node* Trie::getRoot()
 {
